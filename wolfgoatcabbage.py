@@ -46,7 +46,7 @@ class WolfGoatCabbage(Problem):
 
     def actions(self, state):
 
-        possibleActions = ()
+        possibleActions = []
         #[('F'), ('F', 'G'), ('F', 'W'), ('F', 'C'), ('G', 'F'), ()]
         # depending on what is in the current state, returns list of possible actions
 
