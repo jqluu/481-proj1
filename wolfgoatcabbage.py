@@ -86,4 +86,5 @@ if __name__ == '__main__':
     solution = breadth_first_graph_search(wgc).solution()
     print(solution)
 
-    
+
+
