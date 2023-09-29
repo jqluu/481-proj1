@@ -18,27 +18,27 @@ class WolfGoatCabbage(Problem):
 
         newState = ()
 
-        if (state == ('F', 'W', 'G', 'C') and action == ('G', 'F')):
+        if (state == ('F', 'W', 'G', 'C') and action == {'G', 'F'}):
             newState = ('W', 'C')
-        elif (state == ('W', 'C') and action == ('F')):
+        elif (state == ('W', 'C') and action == {'F'}):
             newState = ('F', 'W', 'C')
-        elif (state == ('F', 'W', 'C') and action == (('W', 'F'))):
+        elif (state == ('F', 'W', 'C') and action == {'W', 'F'}):
             newState = ('C')
-        elif (state == ('F', 'W', 'C') and action == (('C', 'F'))):
+        elif (state == ('F', 'W', 'C') and action == {'C', 'F'}):
             newState = ('W')
-        elif (state == ('W') and action == ('G','F')):
+        elif (state == ('W') and action == {'G','F'}):
             newState = ('F', 'G', 'W')
-        elif (state == ('C') and action == ('G','F')):
+        elif (state == ('C') and action == {'G','F'}):
             newState = ('F', 'G', 'C')
-        elif (state == ('F', 'G', 'C') and action == ('C', 'F')):
+        elif (state == ('F', 'G', 'C') and action == {'C', 'F'}):
             newState = ('G')
-        elif (state == ('F', 'G', 'W') and action == ('W', 'F')):
+        elif (state == ('F', 'G', 'W') and action == {'W', 'F'}):
             newState = ('G')
-        elif (state == ('G') and action == ('F')):
+        elif (state == ('G') and action == {'F'}):
             newState = ('F', 'G')
-        elif (state == ('F', 'G') and action == ('G', 'F')):
+        elif (state == ('F', 'G') and action == {'G', 'F'}):
             newState = ()
-        elif (action == ()):
+        elif (action == {}):
             newState = ()
 
         return newState
@@ -51,23 +51,23 @@ class WolfGoatCabbage(Problem):
         # depending on what is in the current state, returns list of possible actions
 
         if (state == ('F', 'W', 'G', 'C')):
-            possibleActions = [('G', 'F')]
+            possibleActions = [{'G', 'F'}]
         elif(state == ('W', 'C')):
-            possibleActions = [('F')]
+            possibleActions = [{'F'}]
         elif(state == ('F', 'W', 'C')):
-            possibleActions = [('W', 'F'), ('C', 'F')]
+            possibleActions = [{'W', 'F'}, {'C', 'F'}]
         elif(state == ('C') or state == ('W')):
-            possibleActions = [('G', 'F')]
+            possibleActions = [{'G', 'F'}]
         elif(state == ('F', 'G', 'C')):
-            possibleActions = [('C', 'F')]
+            possibleActions = [{'C', 'F'}]
         elif(state == ('F', 'G', 'W')):
-            possibleActions = [('W', 'F')]
+            possibleActions = [{'W', 'F'}]
         elif(state == ('G')):
-            possibleActions = [('F')]
+            possibleActions = [{'F'}]
         elif(state == ('F', 'G')):
-            possibleActions = [('G', 'F')]
+            possibleActions = [{'G', 'F'}]
         elif(state == ()):
-            possibleActions = ()
+            possibleActions = []
         
         return possibleActions
     
